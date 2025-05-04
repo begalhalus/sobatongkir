@@ -1,0 +1,118 @@
+---
+const { title } = Astro.props;
+import { APP_NAME } from "@globals";
+---
+
+<html
+  lang="en"
+  dir="ltr"
+  data-nav-layout="horizontal"
+  data-nav-style="menu-click"
+  data-menu-position="fixed"
+  data-theme-mode="light"
+>
+  <head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{title} - {APP_NAME}</title>
+    <meta
+      name="Description"
+      content="Bootstrap Responsive Admin Web Dashboard HTML5 Template"
+    />
+    <meta name="Author" content="Spruko Technologies Private Limited" />
+    <meta
+      name="keywords"
+      content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit."
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="/images/brand-logos/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Bootstrap Css -->
+    <link
+      id="style"
+      href="/libs/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Style Css -->
+    <link href="/css/styles.css" rel="stylesheet" />
+
+    <!-- Icons Css -->
+    <link href="/css/icons.css" rel="stylesheet" />
+
+    <!-- Node Waves Css -->
+    <link href="/libs/node-waves/waves.min.css" rel="stylesheet" />
+
+    <!-- SwiperJS Css -->
+    <link rel="stylesheet" href="/libs/swiper/swiper-bundle.min.css" />
+
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="/libs/flatpickr/flatpickr.min.css" />
+    <link rel="stylesheet" href="/libs/@simonwep/pickr/themes/nano.min.css" />
+
+    <!-- Choices Css -->
+    <link
+      rel="stylesheet"
+      href="/libs/choices.js/public/assets/styles/choices.min.css"
+    />
+
+    <script is:inline>
+      if (localStorage.ynexlandingdarktheme) {
+        document.querySelector("html").setAttribute("data-theme-mode", "dark");
+      }
+      if (localStorage.ynexlandingrtl) {
+        document.querySelector("html").setAttribute("dir", "rtl");
+        document
+          .querySelector("#style")
+          ?.setAttribute("href", "/libs/bootstrap/css/bootstrap.rtl.min.css");
+      }
+    </script>
+  </head>
+
+  <body class="landing-body jobs-landing">
+    <main id="main-contents">
+      <slot />
+    </main>
+
+    <div class="scrollToTop">
+      <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+
+    <!-- Popper JS -->
+    <script is:inline src="/libs/@popperjs/core/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script is:inline src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Color Picker JS -->
+    <script is:inline src="/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+    <!-- Choices JS -->
+    <script
+      is:inline
+      src="/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script is:inline src="/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Defaultmenu JS -->
+    <script is:inline src="/js/defaultmenu.min.js"></script>
+
+    <!-- Internal Landing JS -->
+    <script is:inline src="/js/landing.js"></script>
+
+    <!-- Node Waves JS-->
+    <script is:inline src="/libs/node-waves/waves.min.js"></script>
+
+    <!-- Sticky JS -->
+    <script is:inline src="/js/sticky.js"></script>
+  </body>
+</html>
