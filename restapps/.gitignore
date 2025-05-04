@@ -1,0 +1,9 @@
+node_modules/
+build/
+matador-api-baturona
+.env
+node_service.bat
+node_service.vbs
+web_service.bat
+web_service.vbs
+web_services.lnk
